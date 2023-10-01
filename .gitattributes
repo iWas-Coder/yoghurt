@@ -10,5 +10,8 @@
 *.M0 linguist-detectable=true
 *.M0 linguist-language=asm
 
+*.M1 linguist-detectable=true
+*.M1 linguist-language=asm
+
 *.S linguist-detectable=true
 *.S linguist-language=asm
