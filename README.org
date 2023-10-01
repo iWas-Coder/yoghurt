@@ -1,0 +1,13 @@
+#+AUTHOR: Wasym A. Alonso
+#+TITLE: Yoghurt
+
+#+CAPTION: Yoghurt logo
+[[assets/logo.png]]
+# License badge
+[[https://www.gnu.org/licenses/gpl-3.0.html][https://img.shields.io/badge/License-GPLv3-blue.svg]]
+
+How to make yoghurt? Add yoghurt to milk!
+
+(...)
+
+* Table of Contents :toc:
