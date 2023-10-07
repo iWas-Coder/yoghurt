@@ -12,14 +12,14 @@ NAME_LED  = led
 NAME_M0   = M0
 
 # Pretty Printing Output (PPO)
-PPO_MKDIR     = MKDIR
-PPO_CLEAN     = CLEAN
-PPO_HEX0      = HEX0
-PPO_HEX1      = HEX1
-PPO_HEX2      = HEX2
-PPO_HEX       = HEX
-PPO_CC        = CC
-PPO_LD        = LD
+PPO_MKDIR = MKDIR
+PPO_CLEAN = CLEAN
+PPO_HEX0  = HEX0
+PPO_HEX1  = HEX1
+PPO_HEX2  = HEX2
+PPO_HEX   = HEX
+PPO_CC    = CC
+PPO_LD    = LD
 
 # Directories
 SRC_DIR   = src
@@ -41,6 +41,7 @@ CPPFLAGS =
 CFLAGS   = -Wall -Wextra -Werror -std=gnu2x
 LDFLAGS  =
 
+# External targets
 BIN_VM = ../$(NAME_VM)/$(BUILD_DIR)/$(NAME_VM)
 
 # Targets
@@ -62,8 +63,8 @@ BIN_M0   = $(BUILD_DIR)/$(NAME_M0)
 all: $(BIN)
 
 $(BUILD_DIR):
-	@printf "  $(PPO_MKDIR)\t$(BUILD_DIR)\n"
-	@mkdir $(BUILD_DIR)
+	@printf "  $(PPO_MKDIR)\t$@\n"
+	@mkdir $@
 
 $(BIN_HEX): $(OBJS_HEX)
 	@printf "  $(PPO_LD)\t$@\n"

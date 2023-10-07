@@ -26,7 +26,8 @@ void vm_HAL_MEM(struct lilith* vm)
 void vm_HALT(struct lilith* vm, uint64_t performance_counter)
 {
   vm->halted = true;
-  fprintf(stderr, "Computer Program has Halted\nAfter Executing %lu instructions\n", performance_counter);
+  fprintf(stderr, "  VM\t%lu\n", performance_counter);
+  // fprintf(stderr, "Computer Program has Halted\nAfter Executing %lu instructions\n", performance_counter);
 
 #ifdef TRACE
   record_trace("HALT");
@@ -94,7 +95,8 @@ void vm_SYS_FSEEK(struct lilith* vm)
 void vm_SYS_EXIT(struct lilith* vm, uint64_t performance_counter)
 {
   vm->halted = true;
-  fprintf(stderr, "Computer Program has Halted\nAfter Executing %lu instructions\n", performance_counter);
+  fprintf(stderr, "  VM\t%lu\n", performance_counter);
+  // fprintf(stderr, "Computer Program has Halted\nAfter Executing %lu instructions\n", performance_counter);
 
 #ifdef TRACE
   record_trace("SYS_EXIT");
