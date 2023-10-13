@@ -10,8 +10,8 @@ VM_DIR  = vm
 HEX_DIR = hex
 ASM_DIR = asm
 
-MAKE_TGTS = vm hex asm
-CLEAN_TGTS = clean-vm clean-hex clean-asm
+MAKE_TGTS  = $(VM_DIR) $(HEX_DIR) $(ASM_DIR)
+CLEAN_TGTS = clean-$(VM_DIR) clean-$(HEX_DIR) clean-$(ASM_DIR)
 
 
 ###################
@@ -21,22 +21,22 @@ CLEAN_TGTS = clean-vm clean-hex clean-asm
 
 all: $(MAKE_TGTS)
 
-vm:
-	@cd $(VM_DIR) && make
+$(VM_DIR):
+	@cd $@ && make
 
-hex:
-	@cd $(HEX_DIR) && make && make check
+$(HEX_DIR):
+	@cd $@ && make && make check
 
-asm:
-	@cd $(ASM_DIR) && make && make check
+$(ASM_DIR):
+	@cd $@ && make && make check
 
 clean: $(CLEAN_TGTS)
 
-clean-vm:
+clean-$(VM_DIR):
 	@cd $(VM_DIR) && make clean
 
-clean-hex:
+clean-$(HEX_DIR):
 	@cd $(HEX_DIR) && make clean
 
-clean-asm:
+clean-$(ASM_DIR):
 	@cd $(ASM_DIR) && make clean

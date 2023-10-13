@@ -50,7 +50,7 @@ BIN_M0     = $(BIN_DIR)/$(NAME_M0)
 ###################
 # === TARGETS === #
 ###################
-.PHONY: all clean
+.PHONY: all check clean
 
 all: $(BIN)
 
@@ -91,6 +91,11 @@ $(BIN_M0): $(OBJ_M0) $(BIN_HEX2_0)
 	@$(BIN_HEX2_0) $< $@
 
 # Phase 4: (M0 + catm + hex2-0) -> cc
+
+check:
+	@printf "\n==== CHECKSUM CHECK starts ====\n"
+	@sha256sum -c checksums.sha256
+	@printf "====  CHECKSUM CHECK ends  ====\n\n"
 
 clean:
 	@if [ -d $(BUILD_DIR) ]; then                    \
